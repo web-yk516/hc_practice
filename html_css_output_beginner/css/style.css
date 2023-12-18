@@ -1,0 +1,197 @@
+/*iPhoneおよび共通設定*/
+body {
+    font-family: -apple-system, "system-ui", "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+p {
+    font-size: 14px;
+    font-weight: w4;
+    line-height: 18px;
+    color: #483E3E;
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 100%;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3%;
+}
+
+.header h1 {
+    margin-top: 10px;
+    margin-left: 5%;
+    font-size: 25px;
+    color: #FAFFF2;
+    padding: 10px 20px 10px 20px;
+    background-color: #384152;
+}
+
+.header ul {
+    display: flex;
+    list-style-type: none;
+    width: 50%;
+    justify-content: space-between;
+    margin-right: 15px;
+}
+
+.header ul li {
+    padding-top: 25px;
+    margin-right: 20px;
+}
+
+.TopPhoto {
+    margin-bottom: 80px;
+}
+
+.TopPhoto img {
+    height: 600px;
+    width: 100%;
+}
+
+figure {
+    background-image: url(../images/1920x1280.png);
+    margin: 0 calc(50% - 50vw);
+    height: auto;
+    padding-bottom: 66.72%;
+    background-position: center;
+    background-size: cover;
+}
+
+.introduce {
+    text-align: center;
+}
+
+h2 {
+    font-size: 35px;
+    border-bottom: 1px solid #000;
+    display: inline-block;
+    padding-bottom: 8px;
+}
+
+.name {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.introduce .contents {
+    font-size: 17px;
+    margin-bottom: 12px;
+    padding: 0 15%;
+    line-height: 23px;
+    text-align: left;
+}
+
+.introduce img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 100px;
+    margin-right:auto
+}
+
+.profile {
+    text-align: center;
+}
+
+.profile h2 {
+    margin-bottom: 40px;
+}
+
+.profile_art h3 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.profile_art img {
+    max-width: 90%;
+    height: auto;
+}
+
+.profile_contents {
+    margin-bottom: 13px;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 105px;
+    border-bottom: 5px solid #000;
+}
+
+/*PCサイズの設定*/
+@media screen and (min-width: 600px) {
+    .container {
+        width: 960px;
+        padding: 0 4%;
+        margin: 0 auto;
+    }
+
+    .header ul {
+        width: 30%;
+    }
+
+    .intro {
+        width: 100%;
+        grid-column: 2;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+    }
+
+    .intro .name, .intro .contents {
+        grid-column: 1;
+        text-align: left;
+    }
+
+    .intro img {
+        margin-right:auto;
+    }
+
+    .introduce img {
+        margin-top: 60px;
+        width: 100px;
+        border-radius: 50%;
+    }
+
+    .name, .contents {
+        padding-left: 11%;
+        padding-right: 5%;
+    }
+
+    .name, .contents {
+        font-size: 20px;
+    }
+
+    .introduce .contents {
+        padding-left: 11%;
+        padding-right: 5%;
+    }
+
+    .ps-br{
+        display: none;
+    }
+
+    .articles {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .profile h2 {
+        grid-column: 2;
+    }
+
+    .profile_art img {
+        width: 100%;
+    }
+
+    .footer {
+        margin: 105px calc(50% - 50vw);
+        margin-bottom: 0;
+        border-bottom: 2px solid #000;
+        padding-bottom: 10px;
+    }
+}
