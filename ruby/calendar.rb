@@ -19,7 +19,7 @@ class Calendar
     lastday_date = last_day.day
     wday = firstday_wday
     # カレンダーの見出しを表示
-    puts "       #{@month}月 #{@year}      "
+    puts "#{@month}月 #{@year}".center(20)
     # 曜日の作成
     puts '日 月 火 水 木 金 土'
     # 1日までの空白を出力
