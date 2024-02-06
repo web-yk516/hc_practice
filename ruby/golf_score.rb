@@ -20,7 +20,7 @@ class Golf
   end
 
   def hole_in_one?(par_score, player_score)
-    player_score == 1 || (par_score == 4 && player_score == 1)
+    player_score == 1 && (3..4).cover?(par_score)
   end
 
   def albatross?(par_score, player_score)
