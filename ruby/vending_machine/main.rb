@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative './juice'
 require_relative './suica'
 require_relative './vending_machine'

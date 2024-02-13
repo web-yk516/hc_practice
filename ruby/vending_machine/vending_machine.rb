@@ -6,8 +6,14 @@ require_relative './suica'
 # VendingMachineクラスを作成
 class VendingMachine
   def initialize
-    initialize_juice_stock
-    initialize_sales_amount
+    # juiceの在庫
+    @juice_stock = [
+      { juice: Juice.new('ペプシ', 150), quantity: 5 },
+      { juice: Juice.new('モンスター', 230), quantity: 5 },
+      { juice: Juice.new('いろはす', 120), quantity: 5 }
+    ]
+    # 売上
+    @sales_amount = 0
   end
 
   # 自動販売機の在庫
@@ -41,7 +47,10 @@ class VendingMachine
 
   # 購入可能なドリンクのリスト
   def available_drinks(suica)
-    @juice_stock.select { |info| purchase_available?(info[:juice].name, suica) }.map  { |info| info[:juice].name }.join(', ')
+    @juice_stock
+      .select { |info| purchase_available?(info[:juice].name, suica) }
+      .map { |info| info[:juice].name }
+      .join(', ')
   end
 
   # 在庫を補充
@@ -55,22 +64,6 @@ class VendingMachine
   # 売上金額
   def revenue
     @sales_amount
-  end
-
-  def initialize_juice_stock
-    # juiceの在庫
-    @juice_stock = [
-      { juice: Juice.new('ペプシ', 150), quantity: 5 },
-      { juice: Juice.new('モンスター', 230), quantity: 5 },
-      { juice: Juice.new('いろはす', 120), quantity: 5 }
-    ]
-  end
-
-  private
-
-  def initialize_sales_amount
-    # 売上
-    @sales_amount = 0
   end
 
   def find_juice_info_by_name(juice_name)
