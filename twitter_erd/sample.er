@@ -2,6 +2,7 @@
   *id {label: "bigint, not null"}
   user_name {label: "varchar, not null, uniq"}
   email {label: "varchar, not null, uniq" }
+  password {label: "varchar, not null"}
   tel {label: "bigint, not null uniq" }
   display_name {label: "varchar, not null" }
   introduce {label: "varchar, null" }
@@ -46,7 +47,8 @@
 
 [messages] {bgcolor: "#d0e0d0"}
   *id {label: "bigint, not null"}
-  user_id {label: "bigint, not null, FK(users)"}
+  sender_id {label: "bigint, not null, FK(users)"}
+  receiver_id {label: "bigint, not null, FK(users)"}
   message {label: "varchar, not null"}
   date {label: "datatime, not null"}
   created_at { label: "datatime, not null"}
@@ -61,6 +63,7 @@
 
 [bookmarks] {bgcolor: "#d0e0d0"}
   *id {label: "bigint, not null"}
+  user_id {label: "bigint, not null, FK(users)"}
   tweet_id {label: "bigint, not null, FK(tweets)"}
   created_at { label: "datatime, not null"}
   updated_at { label: "datatime, not null"}
@@ -76,6 +79,7 @@ users 1--* `retweets`
 users 1--* `messages`
 users 1--* `notifications`
 users 1--* `followers`
+users 1--* `bookmarks`
 
 tweets 1--* `likes`
 tweets 1--* `retweets`
